@@ -32,9 +32,29 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- neotree
+    ["<leader>E"] = { "<cmd>Neotree toggle buffers<cr>", desc = "Toggle Buffers Explorer" },
+    -- select all
+    ["<C-a>"] = { "ggVG" },
+    -- redo
+    ["U"] = { "<C-r>" },
+    -- next buffers
+    ["L"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    -- prev buffers
+    ["H"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
+    ["C-S-j"] = { ":m '>+1<cr>gv=gv" },
+    ["C-S-k"] = { ":m '<-2<cr>gv=gv" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  v = {},
+  x = {},
 }
