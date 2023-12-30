@@ -69,6 +69,12 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- This script is for neovide
+    if vim.g.neovide then
+      -- Put anything you want to happen only in Neovide here
+      vim.o.guifont = "MesloLGS NF:h14"
+      vim.g.neovide_cursor_vfx_mode = "torpedo"
+    end
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
