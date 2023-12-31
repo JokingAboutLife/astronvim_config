@@ -39,8 +39,8 @@ return {
     -- redo
     ["U"] = { "<C-r>" },
     -- move line
-    ["J"] = { ":m .+1<cr>gv=gv" },
-    ["K"] = { ":m .-2<cr>gv=gv" },
+    ["<C-S-J>"] = { ":m .+1<cr>gv=gv" },
+    ["<C-S-K>"] = { ":m .-2<cr>gv=gv" },
     ["<leader>f"] = { "<cmd>Format<cr>", desc = "Format code" },
     ["<leader>F"] = { "<cmd>FormatWrite", desc = "Format code and write" },
   },
@@ -51,7 +51,7 @@ return {
   v = {},
   x = {
     -- virsual model move line
-    ["J"] = { ":m '>+1<cr>gv=gv" },
-    ["K"] = { ":m '<-2<cr>gv=gv" },
+    ["<C-S-J>"] = { ":m '>+1<cr>gv=gv" },
+    ["<C-S-K>"] = { ":m '<-2<cr>gv=gv" },
   },
 }
