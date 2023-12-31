@@ -9,14 +9,14 @@ return {
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -38,23 +38,20 @@ return {
     ["<C-a>"] = { "ggVG" },
     -- redo
     ["U"] = { "<C-r>" },
-    -- next buffers
-    ["L"] = {
-      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-      desc = "Next buffer",
-    },
-    -- prev buffers
-    ["H"] = {
-      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-      desc = "Previous buffer",
-    },
-    ["C-S-j"] = { ":m '>+1<cr>gv=gv" },
-    ["C-S-k"] = { ":m '<-2<cr>gv=gv" },
+    -- move line
+    ["J"] = { ":m .+1<cr>gv=gv" },
+    ["K"] = { ":m .-2<cr>gv=gv" },
+    ["<leader>f"] = { "<cmd>Format<cr>", desc = "Format code" },
+    ["<leader>F"] = { "<cmd>FormatWrite", desc = "Format code and write" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
   v = {},
-  x = {},
+  x = {
+    -- virsual model move line
+    ["J"] = { ":m '>+1<cr>gv=gv" },
+    ["K"] = { ":m '<-2<cr>gv=gv" },
+  },
 }

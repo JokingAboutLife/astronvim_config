@@ -45,4 +45,11 @@ return {
       -- options
     },
   },
+  {
+    "mhartington/formatter.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- options
+    },
+  },
 }
