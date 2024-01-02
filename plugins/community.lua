@@ -6,5 +6,6 @@ return {
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  -- { import = "astrocommunity.colorscheme.nordic-nvim" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
