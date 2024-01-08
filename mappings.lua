@@ -42,7 +42,7 @@ return {
     ["<C-S-J>"] = { ":m .+1<cr>gv=gv" },
     ["<C-S-K>"] = { ":m .-2<cr>gv=gv" },
     ["<leader>f"] = { "<cmd>Format<cr>", desc = "Format code" },
-    ["<leader>F"] = { "<cmd>FormatWrite", desc = "Format code and write" },
+    ["<leader>F"] = { "<cmd>FormatWrite<cr>", desc = "Format code and write" },
   },
   t = {
     -- setting a mapping to false will disable it
