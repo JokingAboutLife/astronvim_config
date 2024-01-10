@@ -5,6 +5,7 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
+  -- normal model
   n = {
     -- second key is the lefthand side of the map
 
@@ -41,17 +42,17 @@ return {
     -- move line
     ["<C-S-J>"] = { ":m .+1<cr>gv=gv" },
     ["<C-S-K>"] = { ":m .-2<cr>gv=gv" },
-    ["<leader>f"] = { "<cmd>Format<cr>", desc = "Format code" },
-    ["<leader>F"] = { "<cmd>FormatWrite<cr>", desc = "Format code and write" },
   },
+  -- terminal model
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
-  v = {},
-  x = {
-    -- virsual model move line
+  -- virsual model
+  v = {
+    -- move multiple lines
     ["<C-S-J>"] = { ":m '>+1<cr>gv=gv" },
     ["<C-S-K>"] = { ":m '<-2<cr>gv=gv" },
   },
+  x = {},
 }

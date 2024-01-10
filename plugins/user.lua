@@ -2,13 +2,14 @@ return {
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    opts = {},
+    -- config = function()
+    --   require("lsp_signature").setup()
+    -- end,
+  },
   {
     "fladson/vim-kitty",
     ft = "kitty.conf",
@@ -18,11 +19,7 @@ return {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
-    end,
+    opts = {},
   },
   {
     "roobert/surround-ui.nvim",
@@ -31,11 +28,9 @@ return {
       "kylechui/nvim-surround",
       "folke/which-key.nvim",
     },
-    config = function()
-      require("surround-ui").setup {
-        root_key = "S",
-      }
-    end,
+    opts = {
+      root_key = "S",
+    },
   },
   {
     "folke/flash.nvim",
@@ -56,27 +51,23 @@ return {
     "j-hui/fidget.nvim",
     tag = "legacy",
     event = "LspAttach",
-    opts = {
-      -- options
-    },
-  },
-  {
-    "mhartington/formatter.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- options
-    },
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
     opts = {},
-    config = function(_, opts) require("lsp_signature").setup(opts) end,
   },
   {
     "sustech-data/wildfire.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function() require("wildfire").setup() end,
+    opts = {},
+    -- config = function() require("wildfire").setup() end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "User AstroFile",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+    cmd = { "TodoQuickFix" },
+    keys = {
+      { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
+    },
   },
 }
