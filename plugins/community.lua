@@ -18,4 +18,15 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.python" },
+
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        separator_style = "thick",
+        show_buffer_close_icons = false,
+      },
+    },
+  },
 }
