@@ -5,9 +5,17 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
+  -- insert model
+  i = {
+    ["<C-v>"] = { "<C-r>+" },
+  },
   -- normal model
   n = {
     -- second key is the lefthand side of the map
+
+    -- tables with the `name` key will be registered with which-key if it's installed
+    -- this is useful for naming menus
+    ["<leader>b"] = { name = "Buffers" },
 
     -- navigate buffer tabs with `H` and `L`
     L = {
@@ -28,14 +36,12 @@ return {
     --   end,
     --   desc = "Pick to close",
     -- },
-    ["<leader>bD"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
-    ["<leader>B"] = { "<cmd>BufferLinePick<cr>", desc = "Pick buffer" },
+    ["<leader>bd"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
+    ["<leader>bp"] = { "<cmd>BufferLinePick<cr>", desc = "Pick buffer" },
 
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
     -- neotree
     ["<leader>E"] = { "<cmd>Neotree toggle buffers<cr>", desc = "Toggle Buffers Explorer" },
     -- select all
