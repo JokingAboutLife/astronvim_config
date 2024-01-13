@@ -17,6 +17,10 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
 
+    -- Clipboard
+    ["<leader>yy"] = { "\"+yy" },
+    ["<leader>p"] = { "\"+p" },
+
     -- navigate buffer tabs with `H` and `L`
     L = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
@@ -62,6 +66,9 @@ return {
     -- move multiple lines
     ["<C-S-J>"] = { ":m '>+1<cr>gv=gv" },
     ["<C-S-K>"] = { ":m '<-2<cr>gv=gv" },
+    -- Clipboard
+    ["<leader>y"] = { "\"+y" },
+    ["<leader>p"] = { "\"+p" },
   },
   x = {},
 }
