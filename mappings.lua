@@ -20,6 +20,7 @@ return {
     -- Clipboard
     ["<leader>yy"] = { "\"+yy" },
     ["<leader>p"] = { "\"+p" },
+    ["<C-v>"] = { "\"+p" },
 
     -- navigate buffer tabs with `H` and `L`
     L = {
@@ -69,6 +70,8 @@ return {
     -- Clipboard
     ["<leader>y"] = { "\"+y" },
     ["<leader>p"] = { "\"+p" },
+    ["<C-c>"] = { "\"+y" },
+    ["<C-v>"] = { "\"+p" },
   },
   x = {},
 }
