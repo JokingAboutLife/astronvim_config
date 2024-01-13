@@ -20,7 +20,6 @@ return {
     -- Clipboard
     ["<leader>yy"] = { "\"+yy" },
     ["<leader>p"] = { "\"+p" },
-    ["<C-v>"] = { "\"+p" },
 
     -- navigate buffer tabs with `H` and `L`
     L = {
